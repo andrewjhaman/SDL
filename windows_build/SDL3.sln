@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{02FAFEA0-C31F-3253-913D-83198942EFA9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A6F5ACCE-18BE-318C-A6FE-88CD1908ED6B} = {A6F5ACCE-18BE-318C-A6FE-88CD1908ED6B}
+		{5497EE91-5A1A-3775-B5A0-E04831A4D14A} = {5497EE91-5A1A-3775-B5A0-E04831A4D14A}
+		{0711B786-F33F-3DE9-8A10-13285EA42C54} = {0711B786-F33F-3DE9-8A10-13285EA42C54}
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6} = {74D53E67-D94A-306E-924F-D91C51A8C4D6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "INSTALL", "INSTALL.vcxproj", "{A9F42AD5-652C-3FF5-B73E-9F75275382ED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{02FAFEA0-C31F-3253-913D-83198942EFA9} = {02FAFEA0-C31F-3253-913D-83198942EFA9}
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6} = {74D53E67-D94A-306E-924F-D91C51A8C4D6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PACKAGE", "PACKAGE.vcxproj", "{3480F5D5-4EBB-365B-AD9D-32D2DFA3914A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{02FAFEA0-C31F-3253-913D-83198942EFA9} = {02FAFEA0-C31F-3253-913D-83198942EFA9}
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6} = {74D53E67-D94A-306E-924F-D91C51A8C4D6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL3-shared", "SDL3-shared.vcxproj", "{A6F5ACCE-18BE-318C-A6FE-88CD1908ED6B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0711B786-F33F-3DE9-8A10-13285EA42C54} = {0711B786-F33F-3DE9-8A10-13285EA42C54}
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6} = {74D53E67-D94A-306E-924F-D91C51A8C4D6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL3_test", "SDL3_test.vcxproj", "{5497EE91-5A1A-3775-B5A0-E04831A4D14A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6} = {74D53E67-D94A-306E-924F-D91C51A8C4D6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_uclibc", "SDL_uclibc.vcxproj", "{0711B786-F33F-3DE9-8A10-13285EA42C54}"
+	ProjectSection(ProjectDependencies) = postProject
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6} = {74D53E67-D94A-306E-924F-D91C51A8C4D6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{74D53E67-D94A-306E-924F-D91C51A8C4D6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uninstall", "uninstall.vcxproj", "{5E16FA54-C886-359F-892A-427BE244E526}"
+	ProjectSection(ProjectDependencies) = postProject
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6} = {74D53E67-D94A-306E-924F-D91C51A8C4D6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02FAFEA0-C31F-3253-913D-83198942EFA9}.Release|x64.ActiveCfg = Release|x64
+		{02FAFEA0-C31F-3253-913D-83198942EFA9}.Release|x64.Build.0 = Release|x64
+		{A9F42AD5-652C-3FF5-B73E-9F75275382ED}.Release|x64.ActiveCfg = Release|x64
+		{3480F5D5-4EBB-365B-AD9D-32D2DFA3914A}.Release|x64.ActiveCfg = Release|x64
+		{A6F5ACCE-18BE-318C-A6FE-88CD1908ED6B}.Release|x64.ActiveCfg = Release|x64
+		{A6F5ACCE-18BE-318C-A6FE-88CD1908ED6B}.Release|x64.Build.0 = Release|x64
+		{5497EE91-5A1A-3775-B5A0-E04831A4D14A}.Release|x64.ActiveCfg = Release|x64
+		{5497EE91-5A1A-3775-B5A0-E04831A4D14A}.Release|x64.Build.0 = Release|x64
+		{0711B786-F33F-3DE9-8A10-13285EA42C54}.Release|x64.ActiveCfg = Release|x64
+		{0711B786-F33F-3DE9-8A10-13285EA42C54}.Release|x64.Build.0 = Release|x64
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6}.Release|x64.ActiveCfg = Release|x64
+		{74D53E67-D94A-306E-924F-D91C51A8C4D6}.Release|x64.Build.0 = Release|x64
+		{5E16FA54-C886-359F-892A-427BE244E526}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F768021-3410-3608-A160-C4FA196AE4F6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

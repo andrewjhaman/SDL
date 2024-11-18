@@ -22,11 +22,9 @@ SOURCE_PATH :: ".";
     main :: () {
         set_working_directory(path_strip_filename(get_path_of_running_executable()));
         args := get_command_line_arguments();
-        /*
         if !build_sdl(args) {
             exit(1);
         }
-        */
         generate_bindings();
     }
 }

@@ -10,11 +10,10 @@ SOURCE_PATH :: ".";
         set_build_options_dc(.{do_output=false});
         root_options := get_build_options();
         args := root_options.compile_time_command_line;
-        /*
-        if !build_sdl(args) {
+
+        if 1 && !build_sdl(args) {
             compiler_set_workspace_status(.FAILED);
         }
-        */
         generate_bindings();
     }
 } else {
@@ -62,7 +61,7 @@ build_sdl :: (args: [] string) -> bool {
             run_or_exit("install_name_tool", "-id", "@rpath/libSDL2.dylib", universal_lib_path);
         }
     } else #if OS == .WINDOWS {
-        success := build_sdl_variant(args, "", .["-DSDL_STATIC=OFF"]); // No static library since that will conflict with the .lib file for the dynamic library.
+        success := build_sdl_variant(args, "", .["-DSDL_STATIC=OFF", "-DSDL_VULKAN=ON"]); // No static library since that will conflict with the .lib file for the dynamic library.
         success &&= copy_file("windows/bin/SDL3.dll", "SDL3.dll");
         success &&= copy_file("windows/lib/SDL3.lib", "SDL3.lib");
     } else #if OS == .LINUX {
@@ -152,6 +151,7 @@ generate_bindings :: () -> bool {
 
         array_add(*libnames, "SDL3.dll");
         array_add(*source_files, "include/SDL3/SDL.h");
+        array_add(*source_files, "include/SDL3/SDL_vulkan.h");
         array_add(*include_paths, "include");
 
         mimic_spacing_flags &= ~Mimic_Spacing_Flags.VTABLE;
@@ -216,6 +216,15 @@ run_or_exit :: (command: .. string, working_directory := "") -> string {
 
 DECLARATIONS_TO_OMIT :: string.[
     "SDL_WindowFlags",
+    "VkInstance_T",
+    "VkInstance",
+    "VkInstancePhysicalDevice_T",
+    "VkInstancePhysicalDevice",
+    "VkPhysicalDevice_T",
+    "VkPhysicalDevice",
+    "VkAllocationCallbacks",
+    "VkSurfaceKHR_T",
+    "VkSurfaceKHR",
 ];
 
 Pair :: struct {

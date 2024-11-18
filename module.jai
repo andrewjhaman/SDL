@@ -27,7 +27,7 @@ using SDL_WindowFlags :: enum_flags u32 {
     SDL_WINDOW_VULKAN        :: 0x10000000;
 }
 
-
+#import "Vulkan";
 
 #if OS == .WINDOWS {
     #load "windows/windows.jai";

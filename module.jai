@@ -27,6 +27,13 @@ using SDL_WindowFlags :: enum_flags u32 {
     SDL_WINDOW_VULKAN        :: 0x10000000;
 }
 
+SDL_BUTTON_LMASK  :: (1 << (SDL_BUTTON_LEFT-1  ));
+SDL_BUTTON_MMASK  :: (1 << (SDL_BUTTON_MIDDLE-1));
+SDL_BUTTON_RMASK  :: (1 << (SDL_BUTTON_RIGHT-1 ));
+SDL_BUTTON_X1MASK :: (1 << (SDL_BUTTON_X1-1    ));
+SDL_BUTTON_X2MASK :: (1 << (SDL_BUTTON_X2-1    ));
+
+
 #import "Vulkan";
 
 #if OS == .WINDOWS {
